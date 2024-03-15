@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card</title>
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content" id="content">
+        <div class="cards">
+            <div class="card front-card">
+                <img class="card-shadow" src="/images/bg-card-front.png" alt="a credit card image">
+            </div>
+            <img class="fc-logo" src="/images/card-logo.svg" alt="">
+            <span class="card-number" id="card-number">0000 0000 0000 0000</span>
+            <span class="card-name" id="cardn"></span>
+            <span class="card-date" id="card-date">00/00</span>
+            <div class="card back-card">
+                <img class="card-shadow" src="/images/bg-card-back.png" alt="a credit card image">
+            </div>
+            <span class="card-cvc" id="card-cvc">000</span>
+        </div>
+        <form class="form" id="form">
+            <div class="data name">
+                <label class="label" for="name">CARDHOLDER NAME</label>
+                <input class="input" type="text" name="name" placeholder="e.g. Jane Appleseed" id="name">
+            </div>
+            <div class=" data number">
+                <label class="label" for="number">CARD NUMBER</label>
+                <input class="input" type="text" name="number" placeholder="e.g. 1234 5678 9123 0000" oninput="agregarFormato()" id="number">
+            </div>
+            <div class="date-cvc">
+                <div class="data date">
+                    <label class="label" for="month-year">EXP. DATE (MM/YY)</label>
+                    <div class="date-inputs">
+                        <input class="input date month" type="text" name="month" placeholder="MM" id="month">
+                        <input class="input date" type="text" name="year" placeholder="YY" id="year">
+                    </div>
+                </div>
+                <div class="cvc data">
+                    <label class="label" for="cvc">CVC</label>
+                    <input class="input" type="text" name="cvc" placeholder="e.g. 123" id="cvc">
+                </div>
+            </div>
+            <button class="button" id="button" type="submit" disabled>Confirm</button>
+        </form>
+    </div>
+    <script src="/src/index.js"></script>
+</body>
+</html>
